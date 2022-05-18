@@ -9,3 +9,14 @@ D:\CodingRepo[FSU]\CodeAlong\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.C
 D:\CodingRepo[FSU]\CodeAlong\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
 D:\CodingRepo[FSU]\CodeAlong\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
 D:\CodingRepo[FSU]\CodeAlong\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.SuggestedBindingRedirects.cache
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe.config
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\bin\Debug\GameOfLife.pdb
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.AssemblyReference.cache
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.SuggestedBindingRedirects.cache
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.Form1.resources
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.Properties.Resources.resources
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.GenerateResource.cache
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CoreCompileInputs.cache
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
+C:\GOL[REPO]\REPO\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
