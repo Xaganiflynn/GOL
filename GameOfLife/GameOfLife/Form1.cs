@@ -260,7 +260,7 @@ namespace GameOfLife
             }
             //shows the pain
             graphicsPanel1.Invalidate();
-            //fuck this shit im out
+            //working from Main Laptop
         }
 
 
