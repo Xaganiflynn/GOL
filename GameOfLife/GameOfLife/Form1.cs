@@ -28,10 +28,12 @@ namespace GameOfLife
 
         int TheBirth = 3;
 
+        //HUD
+        bool HUD;
+
         // Drawing colors
         System.Drawing.Color gridColor = Settings.Default.GridColor;
         System.Drawing.Color cellColor = Settings.Default.CellColor;
-        System.Drawing.Color backColor = Settings.Default.BGColor;
 
         // The Timer class
         Timer timer = new Timer();
@@ -45,7 +47,7 @@ namespace GameOfLife
             InitializeComponent();
 
             // Setup the timer
-            timer.Interval = Properties.Settings.Default.Speed; // milliseconds
+            timer.Interval = Settings.Default.Speed; // milliseconds
             timer.Tick += Timer_Tick;
             timer.Enabled = false; // start timer running
         }
@@ -95,8 +97,21 @@ namespace GameOfLife
             generations++;
 
             // Update status strip generations and Cell Count
-            toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
-            toolStripStatusLabel1.Text = "Cell Count = " + Alivecells.ToString();
+
+            if(HUD == true)
+            {
+                toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
+                toolStripStatusLabel1.Text = "Cell Count = " + Alivecells.ToString();
+                graphicsPanel1.Invalidate();
+            }
+            else
+            {
+                toolStripStatusLabelGenerations.Text = "";
+                toolStripStatusLabel1.Text = "";
+                graphicsPanel1.Invalidate();
+            }
+
+            
             Alivecells = 0;
 
             graphicsPanel1.Invalidate();
@@ -118,6 +133,7 @@ namespace GameOfLife
             int cellWidth = graphicsPanel1.ClientSize.Width / universe.GetLength(0);
             // CELL HEIGHT = WINDOW HEIGHT / NUMBER OF CELLS IN Y
             int cellHeight = graphicsPanel1.ClientSize.Height / universe.GetLength(1);
+
 
             // A Pen for drawing the grid lines (color, width)
             Pen gridPen = new Pen(gridColor, 1);
@@ -217,11 +233,11 @@ namespace GameOfLife
                     graphicsPanel1.Invalidate();
                 }
             }
+            //make sure it doesnt crash when clicked in the middle
             catch (Exception)
             {
             }
             // If the left mouse button was clicked
-
         }
 
         #region Methods
@@ -531,7 +547,7 @@ namespace GameOfLife
             //Update Property
             Settings.Default.GridColor = gridColor;
             Settings.Default.CellColor = cellColor;
-            Settings.Default.BGColor = BackColor;
+            Settings.Default.BGColor = graphicsPanel1.BackColor;
 
             Settings.Default.Save();
         }
@@ -546,15 +562,6 @@ namespace GameOfLife
                 gridColor = colors.Color;
             }
             graphicsPanel1.Invalidate();
-
-            //ColorDialog colors = new ColorDialog();
-            //colors.Color = Settings.Default.GridColor;
-
-            //if (DialogResult.OK == colors.ShowDialog())
-            //{
-            //    gridColor = colors.Color;
-            //    graphicsPanel1.Invalidate();
-            //}
         }
 
         private void cellColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -572,13 +579,24 @@ namespace GameOfLife
         private void backColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog colors = new ColorDialog();
-            colors.Color = backColor;
+            colors.Color = graphicsPanel1.BackColor;
 
             if (DialogResult.OK == colors.ShowDialog())
             {
-                backColor = colors.Color;
+                graphicsPanel1.BackColor = colors.Color;
             }
             graphicsPanel1.Invalidate();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                HUD = false;
+                gridColor = System.Drawing.Color.Empty;
+            }
+            else
+                HUD = true;
         }
     }
 }
