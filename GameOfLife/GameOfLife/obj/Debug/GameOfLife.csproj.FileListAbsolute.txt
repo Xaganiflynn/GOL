@@ -31,3 +31,4 @@ C:\GOL[Repo]\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.GenerateResource.
 C:\GOL[Repo]\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CoreCompileInputs.cache
 C:\GOL[Repo]\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
 C:\GOL[Repo]\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
+C:\GOL[Repo]\GameOfLife\GameOfLife\obj\Debug\GameOfLife.Properties.Color.resources
