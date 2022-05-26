@@ -14,7 +14,7 @@ namespace GameOfLife.Properties
     public partial class Color : Form
     {
 
-
+        public Color Seed { get; set; }
         public Color()
         {
             InitializeComponent();
@@ -38,7 +38,24 @@ namespace GameOfLife.Properties
 
         private void buttonBGColor_Click(object sender, EventArgs e)
         {
+            ColorDialog colors = new ColorDialog();
+            colors.Color = Settings.Default.BGColor;
 
+            if (DialogResult.OK == colors.ShowDialog())
+            {
+                Settings.Default.BGColor = colors.Color;
+            }
+        }
+
+        private void buttonCellColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colors = new ColorDialog();
+            colors.Color = Settings.Default.CellColor;
+
+            if (DialogResult.OK == colors.ShowDialog())
+            {
+                Settings.Default.CellColor = colors.Color;
+            }
         }
     }
 }

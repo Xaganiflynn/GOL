@@ -25,10 +25,10 @@ namespace GameOfLife.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Width {
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int Width {
             get {
-                return ((string)(this["Width"]));
+                return ((int)(this["Width"]));
             }
             set {
                 this["Width"] = value;
@@ -37,10 +37,10 @@ namespace GameOfLife.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Height {
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int Height {
             get {
-                return ((string)(this["Height"]));
+                return ((int)(this["Height"]));
             }
             set {
                 this["Height"] = value;
@@ -49,10 +49,10 @@ namespace GameOfLife.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Speed {
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int Speed {
             get {
-                return ((string)(this["Speed"]));
+                return ((int)(this["Speed"]));
             }
             set {
                 this["Speed"] = value;

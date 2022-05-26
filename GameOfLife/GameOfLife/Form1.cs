@@ -14,8 +14,8 @@ namespace GameOfLife
 {
     public partial class Form1 : Form
     {
-        static int xSize = 10;
-        static int ySize = 10;
+        static int xSize = Settings.Default.Width;
+        static int ySize = Settings.Default.Height;
 
         // The universes array
         bool[,] universe = new bool[xSize, ySize];
@@ -29,8 +29,9 @@ namespace GameOfLife
         int TheBirth = 3;
 
         // Drawing colors
-        System.Drawing.Color gridColor = Properties.Settings.Default.GridColor;
-        System.Drawing.Color cellColor = System.Drawing.Color.DarkGreen;
+        System.Drawing.Color gridColor = Settings.Default.GridColor;
+        System.Drawing.Color cellColor = Settings.Default.CellColor;
+        System.Drawing.Color backColor = Settings.Default.BGColor;
 
         // The Timer class
         Timer timer = new Timer();
@@ -44,7 +45,7 @@ namespace GameOfLife
             InitializeComponent();
 
             // Setup the timer
-            timer.Interval = 100; // milliseconds
+            timer.Interval = Properties.Settings.Default.Speed; // milliseconds
             timer.Tick += Timer_Tick;
             timer.Enabled = false; // start timer running
         }
@@ -96,7 +97,6 @@ namespace GameOfLife
             // Update status strip generations and Cell Count
             toolStripStatusLabelGenerations.Text = "Generations = " + generations.ToString();
             toolStripStatusLabel1.Text = "Cell Count = " + Alivecells.ToString();
-            graphicsPanel1.Invalidate();
             Alivecells = 0;
 
             graphicsPanel1.Invalidate();
@@ -525,32 +525,60 @@ namespace GameOfLife
             }
         }
 
-        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Properties.Color form2 = new Properties.Color();
+            //Update Property
+            Settings.Default.GridColor = gridColor;
+            Settings.Default.CellColor = cellColor;
+            Settings.Default.BGColor = BackColor;
 
-            if (DialogResult.OK == form2.ShowDialog())
+            Settings.Default.Save();
+        }
+
+        private void gridColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colors = new ColorDialog();
+            colors.Color = gridColor;
+
+            if (DialogResult.OK == colors.ShowDialog())
             {
-                int x = 10;
+                gridColor = colors.Color;
             }
-
+            graphicsPanel1.Invalidate();
 
             //ColorDialog colors = new ColorDialog();
-            //colors.Color = gridColor;
+            //colors.Color = Settings.Default.GridColor;
 
-            //if(DialogResult.OK == colors.ShowDialog())
+            //if (DialogResult.OK == colors.ShowDialog())
             //{
             //    gridColor = colors.Color;
             //    graphicsPanel1.Invalidate();
             //}
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void cellColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Update Property
-            Properties.Settings.Default.GridColor = gridColor;
+            ColorDialog colors = new ColorDialog();
+            colors.Color = cellColor;
 
-            Properties.Settings.Default.Save();
+            if (DialogResult.OK == colors.ShowDialog())
+            {
+                cellColor = colors.Color;
+            }
+            graphicsPanel1.Invalidate();
+        }
+
+        private void backColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colors = new ColorDialog();
+            colors.Color = backColor;
+
+            if (DialogResult.OK == colors.ShowDialog())
+            {
+                backColor = colors.Color;
+            }
+            graphicsPanel1.Invalidate();
         }
     }
 }

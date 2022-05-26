@@ -2,14 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GameOfLife.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Width" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="Width" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
     </Setting>
-    <Setting Name="Height" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="Height" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
     </Setting>
-    <Setting Name="Speed" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="Speed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="CellColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">192, 255, 255</Value>

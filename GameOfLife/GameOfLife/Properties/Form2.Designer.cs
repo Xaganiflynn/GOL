@@ -63,6 +63,7 @@
             this.buttonCellColor.TabIndex = 3;
             this.buttonCellColor.Text = "Cell Color";
             this.buttonCellColor.UseVisualStyleBackColor = true;
+            this.buttonCellColor.Click += new System.EventHandler(this.buttonCellColor_Click);
             // 
             // buttonGColor
             // 
