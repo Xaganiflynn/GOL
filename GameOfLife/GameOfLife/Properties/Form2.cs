@@ -28,11 +28,11 @@ namespace GameOfLife.Properties
         private void buttonGColor_Click(object sender, EventArgs e)
         {
             ColorDialog colors = new ColorDialog();
-            colors.Color = Properties.Settings.Default.GridColor;
+            colors.Color = Settings.Default.GridColor;
 
             if (DialogResult.OK == colors.ShowDialog())
             {
-                Properties.Settings.Default.GridColor = colors.Color;
+                Settings.Default.GridColor = colors.Color;
             }
         }
 
