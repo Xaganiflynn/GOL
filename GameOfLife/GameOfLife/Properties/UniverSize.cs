@@ -36,5 +36,10 @@ namespace GameOfLife.Properties
             UniverSize numbers = new UniverSize();
             //numbers.SetNumber1(xSize);
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

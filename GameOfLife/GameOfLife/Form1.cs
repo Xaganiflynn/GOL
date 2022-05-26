@@ -278,6 +278,15 @@ namespace GameOfLife
             }
             return count;
         }
+
+        public int GetWidth()
+        {
+            return (int)numericUpDown1.Value;
+        }
+        public void SetWidth(int number)
+        {
+            numericUpDown1.Value = number;
+        }
         #endregion
 
         private void Pause_Button(object sender, EventArgs e)
@@ -597,6 +606,12 @@ namespace GameOfLife
             }
             else
                 HUD = true;
+        }
+
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
